@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{mode}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list no-lines>
+   <ion-item>
+    <ion-label stacked>Title</ion-label>
+    <ion-input type="text" [(ngModel)]="todo.title"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Description</ion-label>
+    <ion-input type="text" [(ngModel)]="todo.description"></ion-input>
+  </ion-item>
+
+    <button ion-button full padding (click)='updateTodo()'>{{mode}}</button>
+
+  </ion-list>
+</ion-content>

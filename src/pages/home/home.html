@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+      <ion-title>Simple Todo</ion-title>
+      <ion-buttons end>
+        <button ion-button (click)="addTodo()">Add</button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list *ngFor="let todo of todos" inset>
+      <ion-item-sliding *ngIf="!todo.completed">
+        <ion-item (click)="editTodo(todo)">
+          <h2>{{todo.title}}</h2>
+          <p>{{todo.description}}</p>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="primary" (click)="markDone(todo)">
+            <ion-icon name="checkmark"></ion-icon>
+            Done
+          </button>
+          <button ion-button color="danger" (click)="deleteTodo(todo)">
+              <ion-icon name="trash"></ion-icon>
+              Delete
+            </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+</ion-content>
